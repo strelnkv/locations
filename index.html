@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Locations</title>
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/fonts.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-left">
+          <img src="./assets/images/Group 1.svg" alt="Logo" class="logo" />
+          <p class="version">v 2.01</p>
+        </div>
+        <div class="header-right">
+          <img src="./assets/images/Vector.svg" alt="User Icon" />
+        </div>
+      </header>
+      <div class="main-container">
+        <div class="sidebar-container">
+          <nav class="sidebar">
+            <input
+              class="menu__input"
+              type="radio"
+              id="property"
+              name="menu"
+              value="1"
+            />
+            <label for="property" class="menu__label">
+              <img src="./assets/images/property.svg" alt="property_icon" />
+              Имущество</label
+            >
+            <input
+              class="menu__input"
+              type="radio"
+              id="inventory"
+              name="menu"
+              value="2"
+            />
+            <label for="inventory" class="menu__label">
+              <img src="./assets/images/inventory.svg" alt="inventory_icon" />
+              Инвентаризация</label
+            >
+            <input
+              class="menu__input"
+              type="radio"
+              id="employees"
+              name="menu"
+              value="3"
+            />
+            <label for="employees" class="menu__label">
+              <img src="./assets/images/employees.svg" alt="employees_icon" />
+              Сотрудники</label
+            >
+            <input
+              class="menu__input"
+              type="radio"
+              id="notifications"
+              name="menu"
+              value="4"
+            />
+            <label for="notifications" class="menu__label">
+              <img
+                src="./assets/images/notifications.svg"
+                alt="notifications_icon"
+              />
+              Уведомления</label
+            >
+            <input
+              class="menu__input"
+              type="radio"
+              id="locations"
+              name="menu"
+              value="5"
+              checked
+            />
+            <label for="locations" class="menu__label">
+              <img src="./assets/images/locations.svg" alt="locations_icon" />
+              Локации</label
+            >
+            <input
+              class="menu__input"
+              type="radio"
+              id="settings"
+              name="menu"
+              value="6"
+            />
+            <label for="settings" class="menu__label">
+              <img src="./assets/images/settings.svg" alt="settings_icon" />
+              Настройки</label
+            >
+
+            <button class="hide-menu">
+              <img src="./assets/images/Галочка.svg" alt="" />Скрыть меню
+            </button>
+          </nav>
+          <main>
+            <div class="main-header">
+              <h1 class="main-header-locations">Локации / Все локации</h1>
+              <div class="main-actions">
+                <button>Все локации</button>
+                <button>Импорт/Экспорт</button>
+                <button>Настройки</button>
+              </div>
+              <button class="create-location-btn">
+                <img src="./assets/images/Плюс.svg" alt="" /> СОЗДАТЬ ЛОКАЦИЮ
+              </button>
+            </div>
+            <div class="locations-list">
+              <div class="location-item">
+                <div class="location-name">
+                  <button class="location-btn">
+                    <img src="./assets/images/minus.svg" alt="" />
+                  </button>
+                  <img src="./assets/images/dots.svg" alt="" />
+                  <span>Локация 1</span>
+                </div>
+                <span class="location-info">512</span>
+                <a href="#" class="edit-action"
+                  ><img src="./assets/images/edit.svg" alt="" />Редактировать</a
+                >
+                <a href="#" class="delete-action"
+                  ><img src="./assets/images/delete.svg" alt="" />Удалить</a
+                >
+              </div>
+              <div class="sub-location">
+                <div class="sub-item">
+                  <span class="sub-name"
+                    ><button class="location-btn">
+                      <img src="./assets/images/plus.svg" alt="" /></button
+                    ><img src="./assets/images/dots.svg" alt="" />Подотдел
+                    1</span
+                  >
+                  <span class="sub-info">10</span>
+                  <span class="sub-comment">Для утерь</span>
+                </div>
+                <div class="sub-item">
+                  <span class="sub-name"
+                    ><button class="location-btn">
+                      <img src="./assets/images/minus.svg" alt="" /></button
+                    ><img src="./assets/images/dots.svg" alt="" />Подотдел
+                    2</span
+                  >
+                  <span class="sub-info">100</span>
+                </div>
+              </div>
+              <div class="sub-sub-item">
+                <span class="sub-sub-name"
+                  ><img src="./assets/images/dots.svg" alt="" />Подподотдел
+                  1</span
+                >
+                <span class="sub-comment">Виртуальная</span>
+                <span class="sub-barcode">Без штрихкода</span>
+              </div>
+
+              <div class="location-item">
+                <div class="location-name">
+                  <button class="location-btn">
+                    <img src="./assets/images/minus.svg" alt="" />
+                  </button>
+                  <img src="./assets/images/dots.svg" alt="" />
+                  <span>Локация 2</span>
+                </div>
+                <span class="location-info">100</span>
+              </div>
+              <div class="location-item">
+                <div class="location-name">
+                  <button class="location-btn">
+                    <img src="./assets/images/minus.svg" alt="" />
+                  </button>
+                  <img src="./assets/images/dots.svg" alt="" />
+                  <span>Локация 3</span>
+                </div>
+                <span class="location-info">100</span>
+              </div>
+            </div>
+          </main>
+          <div class="search">
+            <button class="synchronization-btn">
+              <img
+                src="./assets/images/synchronization.svg"
+                alt=""
+              />СИНХРОНИЗАЦИЯ <span>(17.05.2024 15:23:21)</span>
+            </button>
+            <div class="search-container">
+              <label class="custom-checkbox">
+                <input type="checkbox" id="checkbox" />
+                <span class="checkmark"></span>
+                Поиск по точному вхождению
+              </label>
+              <form class="search-block">
+                <button class="btn-submit" type="submit">
+                  <img src="./assets/images/Лупа.svg" alt="" />
+                </button>
+                <input
+                  type="text"
+                  name="text"
+                  class="search-input"
+                  placeholder="ПОИСК"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="footer-left">
+          <span>Последний прием: 20.09.2021 18:36:21</span>
+          <span>Последняя передача: 20.09.2021 18:38:21</span>
+        </div>
+        <div class="footer-right">
+          <img src="./assets/images/documentation.svg" alt="" />
+          <a href="#">Документация</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
