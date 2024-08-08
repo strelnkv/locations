@@ -116,15 +116,33 @@ main {
   display: flex;
   flex-direction: column;
 }
-
-/* .main-header {
-} */
-
 .main-actions {
   display: flex;
   gap: 19px;
   padding-top: 25px;
 }
+
+/* Скрытие радио кнопок */
+.main-actions input[type="radio"] {
+  display: none;
+}
+
+.main-actions label {
+  background-color: #172139;
+  color: white;
+  border: none;
+  padding: 9px 31px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: "Futura PT";
+}
+
+/* .main-actions input[type="radio"]:checked + label {
+  background-color: #172139;
+  color: white;
+} */
+
 button {
   background-color: #172139;
   color: white;
@@ -142,7 +160,8 @@ button {
   padding: 16px 52px;
   gap: 7px;
 }
-.location-btn {
+.location-btn,
+.sub-item-btn {
   padding: 0;
   border: none;
   font: inherit;
@@ -151,6 +170,7 @@ button {
 
   cursor: pointer;
 }
+
 .locations-list {
   padding-top: 26px;
 }
@@ -196,7 +216,7 @@ button {
   padding-left: 20px;
 }
 
-.sub-item {
+.sub-item-first {
   display: flex;
   align-items: center;
   gap: 30px;
@@ -229,7 +249,9 @@ button {
   font-size: 15px;
   font-weight: 400;
 }
-
+.disabled {
+  display: none;
+}
 .search {
   padding-top: 80px;
   padding-right: 30px;
@@ -362,4 +384,143 @@ footer {
 }
 .footer-right img {
   width: 17px;
+}
+
+/* pop-up */
+
+.popup-wrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  position: relative;
+  z-index: 1;
+  background-color: white;
+  padding: 25px 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+}
+
+.popup-content h2 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.form-group {
+  margin-bottom: 17px;
+}
+.form-group label {
+  font-family: "Galdeano", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+.form-group input[type="text"],
+.form-group select {
+  width: 360px;
+  padding: 17px 25px;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+.form-group input[type="text"]::placeholder {
+  font-family: "Galdeano", sans-serif;
+  font-size: 16px;
+  color: #aeaeae;
+}
+.dropdown {
+  position: relative;
+}
+
+.dropdown select {
+  appearance: none;
+  background: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10"><path fill="none" stroke="%23999" stroke-width="2" d="M1 1l6 6 6-6"/></svg>')
+    #f5f5f5;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  font-family: "Galdeano", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: #aeaeae;
+}
+
+.form-group.toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding-top: 17px; */
+}
+
+.form-group.toggle input[type="checkbox"] {
+  appearance: none;
+  width: 40px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 20px;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-group.toggle input[type="checkbox"]:checked {
+  background: #ff6600;
+}
+
+.form-group.toggle input[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.3s;
+}
+
+.form-group.toggle input[type="checkbox"]:checked:before {
+  transform: translateX(20px);
+}
+
+.form-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 16px 50px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn.create {
+  background-color: #272c48;
+  color: white;
+}
+
+.btn.cancel {
+  background-color: white;
+  color: #272c48;
+  border: 1px solid #272c48;
 }

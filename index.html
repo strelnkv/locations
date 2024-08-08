@@ -7,8 +7,56 @@
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/fonts.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Galdeano&family=Golos+Text:wght@400..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <div id="popupWrapper" class="popup-wrapper">
+      <div class="popup">
+        <div class="popup-content">
+          <h2>Создать локацию</h2>
+          <form>
+            <div class="form-group">
+              <input type="text" placeholder="Название" />
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Штрихкод" />
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="RFID" />
+            </div>
+            <div class="form-group">
+              <div class="dropdown">
+                <select>
+                  <option>Вложенность</option>
+                  <option>Еще опция</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group toggle">
+              <label for="virtual-location">Виртуальная локация</label>
+              <input type="checkbox" id="virtual-location" />
+            </div>
+            <div class="form-group toggle">
+              <label for="lost-location">Локация для утерь</label>
+              <input type="checkbox" id="lost-location" />
+            </div>
+            <div class="form-buttons">
+              <button type="submit" class="btn create">
+                <img src="./assets/images/Сохранить.svg" alt="" />СОЗДАТЬ
+              </button>
+              <button type="button" class="btn cancel" id="closePopupBtn">
+                ОТМЕНИТЬ
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <header>
         <div class="header-left">
@@ -101,19 +149,32 @@
             <div class="main-header">
               <h1 class="main-header-locations">Локации / Все локации</h1>
               <div class="main-actions">
-                <button>Все локации</button>
-                <button>Импорт/Экспорт</button>
-                <button>Настройки</button>
+                <label>
+                  <input type="radio" name="option" value="locations" checked />
+                  <span>Все локации</span>
+                </label>
+                <label>
+                  <input type="radio" name="option" value="import-export" />
+                  <span>Импорт/Экспорт</span>
+                </label>
+                <label>
+                  <input type="radio" name="option" value="settings" />
+                  <span>Настройки</span>
+                </label>
               </div>
-              <button class="create-location-btn">
+              <button class="create-location-btn" id="openPopupBtn">
                 <img src="./assets/images/Плюс.svg" alt="" /> СОЗДАТЬ ЛОКАЦИЮ
               </button>
             </div>
-            <div class="locations-list">
+            <div
+              class="locations-list"
+              id="locations-list"
+              style="display: none"
+            >
               <div class="location-item">
                 <div class="location-name">
                   <button class="location-btn">
-                    <img src="./assets/images/minus.svg" alt="" />
+                    <img src="./assets/images/plus.svg" alt="" />
                   </button>
                   <img src="./assets/images/dots.svg" alt="" />
                   <span>Локация 1</span>
@@ -126,40 +187,53 @@
                   ><img src="./assets/images/delete.svg" alt="" />Удалить</a
                 >
               </div>
-              <div class="sub-location">
+              <div class="sub-location" style="display: none">
                 <div class="sub-item">
-                  <span class="sub-name"
-                    ><button class="location-btn">
-                      <img src="./assets/images/plus.svg" alt="" /></button
-                    ><img src="./assets/images/dots.svg" alt="" />Подотдел
+                  <div class="sub-item-first">
+                    <span class="sub-name"
+                      ><button class="sub-item-btn">
+                        <img src="./assets/images/plus.svg" alt="" /></button
+                      ><img src="./assets/images/dots.svg" alt="" />Подотдел
+                      1</span
+                    >
+                    <span class="sub-info">10</span>
+                    <span class="sub-comment">Для утерь</span>
+                  </div>
+                </div>
+                <div class="sub-item">
+                  <div class="sub-item-first">
+                    <span class="sub-name"
+                      ><button class="sub-item-btn">
+                        <img src="./assets/images/minus.svg" alt="" /></button
+                      ><img src="./assets/images/dots.svg" alt="" />Подотдел
+                      2</span
+                    >
+                    <span class="sub-info">100</span>
+                  </div>
+                </div>
+                <div class="sub-sub-item" style="display: none">
+                  <span class="sub-sub-name"
+                    ><img src="./assets/images/dots.svg" alt="" />Подподотдел
                     1</span
                   >
-                  <span class="sub-info">10</span>
-                  <span class="sub-comment">Для утерь</span>
+                  <span class="sub-comment">Виртуальная</span>
+                  <span class="sub-barcode">Без штрихкода</span>
                 </div>
-                <div class="sub-item">
+                <div class="sub-item-first">
                   <span class="sub-name"
-                    ><button class="location-btn">
-                      <img src="./assets/images/minus.svg" alt="" /></button
+                    ><button class="sub-item-btn">
+                      <img src="./assets/images/plus.svg" alt="" /></button
                     ><img src="./assets/images/dots.svg" alt="" />Подотдел
-                    2</span
+                    3</span
                   >
-                  <span class="sub-info">100</span>
+                  <span class="sub-info">400</span>
                 </div>
-              </div>
-              <div class="sub-sub-item">
-                <span class="sub-sub-name"
-                  ><img src="./assets/images/dots.svg" alt="" />Подподотдел
-                  1</span
-                >
-                <span class="sub-comment">Виртуальная</span>
-                <span class="sub-barcode">Без штрихкода</span>
               </div>
 
               <div class="location-item">
                 <div class="location-name">
                   <button class="location-btn">
-                    <img src="./assets/images/minus.svg" alt="" />
+                    <img src="./assets/images/plus.svg" alt="" />
                   </button>
                   <img src="./assets/images/dots.svg" alt="" />
                   <span>Локация 2</span>
@@ -169,7 +243,7 @@
               <div class="location-item">
                 <div class="location-name">
                   <button class="location-btn">
-                    <img src="./assets/images/minus.svg" alt="" />
+                    <img src="./assets/images/plus.svg" alt="" />
                   </button>
                   <img src="./assets/images/dots.svg" alt="" />
                   <span>Локация 3</span>
@@ -217,5 +291,6 @@
         </div>
       </footer>
     </div>
+    <script src="./index.js"></script>
   </body>
 </html>
