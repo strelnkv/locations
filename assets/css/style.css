@@ -138,11 +138,6 @@ main {
   font-family: "Futura PT";
 }
 
-/* .main-actions input[type="radio"]:checked + label {
-  background-color: #172139;
-  color: white;
-} */
-
 button {
   background-color: #172139;
   color: white;

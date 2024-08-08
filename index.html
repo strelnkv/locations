@@ -57,6 +57,56 @@
         </div>
       </div>
     </div>
+    <div id="editPopupWrapper" class="popup-wrapper">
+      <div class="popup">
+        <div class="popup-content">
+          <h2>Изменить локацию %название%</h2>
+          <form>
+            <div class="form-group">
+              <label for="edit-name">Название</label>
+              <input type="text" placeholder="Локация 11" id="edit-name" />
+            </div>
+            <div class="form-group">
+              <label for="edit-barcode">Штрихкод</label>
+              <input
+                type="text"
+                placeholder="1123123123123"
+                id="edit-barcode"
+              />
+            </div>
+            <div class="form-group">
+              <label for="edit-rfid">RFID</label>
+              <input type="text" placeholder="1123123123123" id="edit-rfid" />
+            </div>
+            <div class="form-group">
+              <label for="edit-hierarchy">Вложенность</label>
+              <div class="dropdown">
+                <select id="edit-hierarchy">
+                  <option>Локация1</option>
+                  <!-- Добавьте опции по необходимости -->
+                </select>
+              </div>
+            </div>
+            <div class="form-group toggle">
+              <label for="edit-virtual-location">Виртуальная локация</label>
+              <input type="checkbox" id="edit-virtual-location" checked />
+            </div>
+            <div class="form-group toggle">
+              <label for="edit-lost-location">Локация для утерь</label>
+              <input type="checkbox" id="edit-lost-location" checked />
+            </div>
+            <div class="form-buttons">
+              <button type="button" class="btn delete">Удалить</button>
+              <button type="button" class="btn cancel" id="closeEditPopupBtn">
+                Отменить
+              </button>
+              <button type="submit" class="btn save">Сохранить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
       <header>
         <div class="header-left">

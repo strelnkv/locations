@@ -64,3 +64,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+//edit popup
+document.addEventListener("DOMContentLoaded", function () {
+  const openPopupBtn = document.querySelector(".edit-action");
+
+  const closePopupBtn = document.getElementById("closeEditPopupBtn");
+  const popupWrapper = document.getElementById("editPopupWrapper");
+
+  openPopupBtn.addEventListener("click", function () {
+    popupWrapper.style.display = "flex";
+  });
+
+  closePopupBtn.addEventListener("click", function () {
+    popupWrapper.style.display = "none";
+  });
+
+  // Close popup when clicking outside of it
+  popupWrapper.addEventListener("click", function (event) {
+    if (event.target === popupWrapper) {
+      popupWrapper.style.display = "none";
+    }
+  });
+});
