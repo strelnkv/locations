@@ -1,4 +1,4 @@
-// Toggle sub-sub-item visibility
+// попап
 document.querySelectorAll(".sub-item-btn").forEach((button) => {
   button.addEventListener("click", (e) => {
     let subSubItem = e.target.closest(".sub-item-first").nextElementSibling;
@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
     popupWrapper.style.display = "none";
   });
 
-  // Close popup when clicking outside of it
   popupWrapper.addEventListener("click", function (event) {
     if (event.target === popupWrapper) {
       popupWrapper.style.display = "none";
@@ -31,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//edit popup
 document.addEventListener("DOMContentLoaded", function () {
   const openPopupBtn = document.querySelector(".edit-action");
 
@@ -46,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
     popupWrapper.style.display = "none";
   });
 
-  // Close popup when clicking outside of it
   popupWrapper.addEventListener("click", function (event) {
     if (event.target === popupWrapper) {
       popupWrapper.style.display = "none";
@@ -54,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//таблица
 const data = [
   {
     name: "Название",
@@ -251,7 +249,7 @@ const data = [
 ];
 const container = document.querySelector(".grid-container");
 
-// Функция для добавления данных в таблицу
+// добавлениe данных в таблицу
 function addDataToGrid(data) {
   data.forEach((item) => {
     container.innerHTML += `
